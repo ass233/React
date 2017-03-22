@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="main/react.js"></script>
+    <script type="text/javascript" src="main/react-dom.js"></script>
+    <script type="text/javascript" src="main/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var MyTitle = React.createClass({
+        getDefaultProps:function () {
+            return {
+                title:'Hello world'
+            };
+        },
+
+        render:function () {
+            return <h1>{this.propos.title}</h1>;
+        }
+    });
+
+    ReactDOM.render(
+            <MyTitle title/>,
+            document.body
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+整套源码地址：https://github.com/backstopmedia/bleeding-edge-sample-app
+react-router源码地址：https://github.com/ReactTraining/react-router
+react-router教程地址：http://react-guide.github.io/react-router-cn/index.html
+Flux架构地址：http://www.ruanyifeng.com/blog/2016/01/flux.html
+Redux地址：http://www.jianshu.com/p/3334467e4b32
+深入理解React、Redux地址：http://www.jianshu.com/p/0e42799be566

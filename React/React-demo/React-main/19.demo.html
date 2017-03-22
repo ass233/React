@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/JSXTransformer.js"></script>-->
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var BindingExample = React.createClass({
+        getInitialState:function () {
+            return {
+                text:''
+            }
+        },
+
+        handleChange:function (event) {
+            this.setState({text:event.target.value})
+        },
+        render:function () {
+            return <div>
+                <input type="text" placeholder="请输入内容" onChange={this.handleChange}/>
+                <p>{this.state.text}</p>
+            </div>
+        }
+    });
+
+    ReactDOM.render(
+            <BindingExample/>,
+            document.body
+    );
+</script>
+</body>
+</html>

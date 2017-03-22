@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Content = React.createClass({
+        render:function () {
+            return <p>{this.props.selectName}</p>;
+        },
+    });
+    var Comment = React.createClass({
+        getInitialState:function () {
+            return {
+                names:["Tim","John","Hank",'ass'],
+                selectName:'',
+            };
+        },
+        handleSelect:function (event) {
+            this.setState({selectName:event.target.value});
+        },
+        render:function () {
+            var options = [];
+            for (var option in this.state.names){
+                options.push(<option value={this.state.names[option]}>{this.state.names[option]}</option>)
+            };
+            return <div>
+                <select onChange={this.handleSelect}>
+                    {options}
+                </select>
+                <Content selectName={this.state.selectName}></Content>
+            </div>;
+        },
+    });
+
+    ReactDOM.render(
+            <Comment></Comment>,
+            document.body
+    );
+</script>
+</body>
+</html>

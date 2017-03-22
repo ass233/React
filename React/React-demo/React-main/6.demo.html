@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var style = {
+        color:"red",
+        border:"1px solid #000",
+    };
+    var HelloWorld = React.createClass({
+        getDefaultProps:function () {
+            console.log("getDefaultProps,1")
+        },
+        getInitialState:function () {
+            console.log("getInitialState,2")
+            return null;
+        },
+        componentWillMount:function () {
+            console.log("componentWillMount,3")
+        },
+        render:function () {
+            return <p>Hello,{this.props.name ? this.props.name : "World"}</p>
+        },
+
+        componentDidMount:function () {
+            console.log("componentDidMount,4")
+        },
+    });
+
+    ReactDOM.render(
+            <div style={style}><HelloWorld/></div>,
+            document.body
+    );
+</script>
+</body>
+</html>

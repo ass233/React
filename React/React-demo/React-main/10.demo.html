@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Content = React.createClass({
+        render:function () {
+            return <p>content</p>;
+        },
+    });
+   var Comment = React.createClass({
+       render:function () {
+           return <div>
+               <select>
+                   <option value="1">Tim</option>
+                   <option value="2">John</option>
+                   <option value="3">Hank</option>
+               </select>
+               <Content></Content>
+           </div>;
+       },
+   });
+
+    ReactDOM.render(
+            <Comment></Comment>,
+            document.body
+    );
+</script>
+</body>
+</html>

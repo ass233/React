@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var style = {
+        color:"red",
+        border:"1px solid #000",
+    };
+    var HelloWorld = React.createClass({
+        render:function () {
+            return <p>Hello,{this.props.name}</p>
+        },
+    });
+
+    var HelloUniverse = React.createClass({
+        getInitialState:function () {
+            return{
+                name:'Tim',
+            };
+        },
+        handleChange:function (event) {
+            this.setState({name:event.target.value});
+        },
+        render:function () {
+            return <div>
+                <HelloWorld name={this.state.name}></HelloWorld>
+                <br/>
+                <input type="text" onChange={this.handleChange}/>
+            </div>
+        },
+    });
+
+    ReactDOM.render(
+            <div style={style}><HelloUniverse></HelloUniverse></div>,
+            document.body
+    );
+</script>
+</body>
+</html>

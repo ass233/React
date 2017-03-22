@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <!-- <script type="text/javascript" src="../main/browser.min.js"></script>-->
+    <script type="text/javascript" src="../js/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+    var HelloWorld = React.createClass({
+       getInitialState:function () {
+           return {
+               password:''
+           }
+       },
+        handleKeyPress:function (event) {
+            this.setState({
+                password:this.state.password + event.which
+            });
+            console.log(this.state)
+        },
+
+        handleChange:function (event) {
+            event.target.value = '';
+        },
+
+        render:function () {
+            return <div>
+                <input onKeyPress={this.handleKeyPress} onChange={this.handleChange}></input>
+                <p style={{'display':this.state.password.indexOf('495051') >= 0? 'inline':'none'}}>You got it!</p>
+            </div>;
+        },
+    });
+
+    ReactDOM.render(
+            <HelloWorld></HelloWorld>,
+            document.body
+    );
+</script>
+</body>
+</html>

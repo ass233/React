@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+   <!-- <script type="text/javascript" src="../js/JSXTransformer.js"></script>-->
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var HelloWorld = React.createClass({
+        getInitialState:function () {
+            return {
+                x:0,
+                y:0
+            }
+        },
+        handleMouseMove:function (event) {
+            this.setState({
+                x:event.clientX,
+                y:event.clientY
+            });
+        },
+
+        render:function () {
+            return <div onMouseMove={this.handleMouseMove} style={{
+                height:'1000px',
+                width:'1000px',
+                backgroundColor:'gray'
+            }}>{this.state.x + ',' + this.state.y}</div>;
+        }
+    });
+
+    ReactDOM.render(
+            <HelloWorld/>,
+            document.body
+    );
+</script>
+</body>
+</html>

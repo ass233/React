@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script type="text/javascript" src="../main/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var HelloWorld = React.createClass({
+        handleChange:function (event) {
+            console.log(event.target.value);
+        },
+        render:function () {
+            return <div>
+                <input onChange={this.handleChange}></input>
+            </div>;
+        },
+    });
+
+    ReactDOM.render(
+            <HelloWorld/>,
+            document.body
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../main/react.js"></script>
+    <script type="text/javascript" src="../main/react-dom.js"></script>
+    <script src="../js/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+    var style = {
+        color:"red",
+        border:"1px solid #000",
+    };
+    var rawHTML = {
+        __html:"<h1>I am inner HTML</h1>"
+    };
+    var HelloWorld = React.createClass({
+        render:function () {
+            return <ul>
+                <li key="1">1</li>
+                <li key="2">2</li>
+                <li key="3">3</li>
+            </ul>
+        }
+    });
+
+    ReactDOM.render(
+            <div style={style}><HelloWorld/></div>,
+            document.body
+    );
+</script>
+</body>
+</html>
